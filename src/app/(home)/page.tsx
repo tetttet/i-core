@@ -6,6 +6,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: logo_name,
   description: description,
+  icons: "/core.png",
 };
 
 export default function Home() {

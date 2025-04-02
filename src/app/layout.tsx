@@ -10,6 +10,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: name,
   description: description,
+  icons: "/logo-removebg.png",
 };
 
 export default function RootLayout({
