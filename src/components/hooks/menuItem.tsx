@@ -333,7 +333,7 @@ const Galaxy = () => {
   );
 };
 
-const Xiomi = () => {
+const Xiaomi = () => {
   return (
     <div className="w-full primary-bg-black py-5 sm:px-10 px-5 flex justify-between items-center relative">
       <div className="container flex w-full screen-max-width mb-14">
@@ -378,4 +378,4 @@ const Xiomi = () => {
   );
 };
 
-export { Store, Mac, Phone, Support, Watch, Pad, AirPods, Galaxy, Xiomi };
+export { Store, Mac, Phone, Support, Watch, Pad, AirPods, Galaxy, Xiaomi };

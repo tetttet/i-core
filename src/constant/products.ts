@@ -757,7 +757,7 @@ export const products = [
     title: "SAMSUNG GALAXY Z Fold6",
     slug: "samsung-galaxy-z-fold6",
     description: "SAMSUNG GALAXY Z Fold6",
-    category: "samsung",
+    category: "galaxy",
     price: 380000,
     image: [s_g_z_fold6_1, s_g_z_fold6_2],
     menu: [
@@ -770,7 +770,7 @@ export const products = [
     title: "SAMSUNG GALAXY S25 ULTRA",
     slug: "samsung-galaxy-s25-ultra",
     description: "SAMSUNG GALAXY S25 ULTRA",
-    category: "samsung",
+    category: "galaxy",
     price: 380000,
     image: [s_g_s25_ultra_1, s_g_s25_ultra_2],
     menu: [
@@ -783,7 +783,7 @@ export const products = [
     title: "SAMSUNG GALAXY S25 PLUS",
     slug: "samsung-galaxy-s25-plus",
     description: "SAMSUNG GALAXY S25 PLUS",
-    category: "samsung",
+    category: "galaxy",
     price: 380000,
     image: [s_g_s25_plus_1, s_g_s25_plus_2],
     menu: [
@@ -796,7 +796,7 @@ export const products = [
     title: "SAMSUNG GALAXY S25",
     slug: "samsung-galaxy-s25",
     description: "SAMSUNG GALAXY S25",
-    category: "samsung",
+    category: "galaxy",
     price: 380000,
     image: [s_g_s25_2, s_g_s25_1],
     menu: [
@@ -809,7 +809,7 @@ export const products = [
     title: "SAMSUNG GALAXY S24 ULTRA",
     slug: "samsung-galaxy-s24-ultra",
     description: "SAMSUNG GALAXY S24 ULTRA",
-    category: "samsung",
+    category: "galaxy",
     price: 380000,
     image: [s_g_s24_ultra_1],
     menu: [
@@ -822,7 +822,7 @@ export const products = [
     title: "SAMSUNG GALAXY S24 PLUS",
     slug: "samsung-galaxy-s24-plus",
     description: "SAMSUNG GALAXY S24 PLUS",
-    category: "samsung",
+    category: "galaxy",
     price: 380000,
     image: [s_g_s24_plus_1, s_g_s24_plus_2],
     menu: [
@@ -835,7 +835,7 @@ export const products = [
     title: "SAMSUNG GALAXY S24",
     slug: "samsung-galaxy-s24",
     description: "SAMSUNG GALAXY S24",
-    category: "samsung",
+    category: "galaxy",
     price: 380000,
     image: [s_g_s24],
     menu: [
@@ -848,7 +848,7 @@ export const products = [
     title: "SAMSUNG GALAXY S24 FE",
     slug: "samsung-galaxy-s24-fe",
     description: "SAMSUNG GALAXY S24 FE",
-    category: "samsung",
+    category: "galaxy",
     price: 380000,
     image: [s_g_s24_fe],
     menu: [{ name: "256GB", price: 400000 }],
@@ -858,7 +858,7 @@ export const products = [
     title: "SAMSUNG A 16",
     slug: "samsung-a16",
     description: "SAMSUNG A 16",
-    category: "samsung",
+    category: "galaxy",
     price: 380000,
     image: [s_a16],
     menu: [{ name: "128GB", price: 980000 }],
@@ -868,7 +868,7 @@ export const products = [
     title: "SAMSUNG A 35",
     slug: "samsung-a35",
     description: "SAMSUNG A 35",
-    category: "samsung",
+    category: "galaxy",
     price: 380000,
     image: [s_a35],
     menu: [{ name: "128GB", price: 980000 }],
@@ -878,7 +878,7 @@ export const products = [
     title: "SAMSUNG A 55",
     slug: "samsung-a55",
     description: "SAMSUNG A 55",
-    category: "samsung",
+    category: "galaxy",
     price: 380000,
     image: [s_a55],
     menu: [

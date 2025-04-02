@@ -13,7 +13,7 @@ import {
   Pad,
   AirPods,
   Galaxy,
-  Xiomi,
+  Xiaomi,
 } from "@/components/hooks/menuItem";
 import { Menu, CircleX, Trash } from "lucide-react";
 
@@ -32,7 +32,7 @@ const Navbar = () => {
     | "iPad"
     | "AirPods"
     | "Galaxy"
-    | "Xiomi"
+    | "Xiaomi"
     | "Support"
     | null
   >(null);
@@ -45,7 +45,7 @@ const Navbar = () => {
   const search = "/images/search.svg";
   const bag = "/images/bag.svg";
 
-  const navLists: { name: "Store" | "Mac" | "iPhone" | "Watch" | "iPad" | "AirPods" | "Galaxy" | "Xiomi" | "Support"; link: string }[] = [
+  const navLists: { name: "Store" | "Mac" | "iPhone" | "Watch" | "iPad" | "AirPods" | "Galaxy" | "Xiaomi" | "Support"; link: string }[] = [
       { name: "Store", link: "/shop" },
       { name: "Mac", link: "/shop?category=mac" },
       { name: "iPhone", link: "/shop?category=iphone" },
@@ -53,7 +53,7 @@ const Navbar = () => {
       { name: "iPad", link: "/shop?category=ipad" },
       { name: "AirPods", link: "/shop?category=airpods" },
       { name: "Galaxy", link: "/shop?category=galaxy" },
-      { name: "Xiomi", link: "/shop?category=xiomi" },
+      { name: "Xiaomi", link: "/shop?category=xiaomi" },
       { name: "Support", link: "/shop?category=support" },
   ];
 
@@ -142,7 +142,7 @@ const Navbar = () => {
             {activeItem === "iPad" && <Pad />}
             {activeItem === "AirPods" && <AirPods />}
             {activeItem === "Galaxy" && <Galaxy />}
-            {activeItem === "Xiomi" && <Xiomi />}
+            {activeItem === "Xiaomi" && <Xiaomi />}
             {activeItem === "Support" && <Support />}
           </motion.div>
         )}
