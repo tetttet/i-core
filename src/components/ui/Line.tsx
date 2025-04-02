@@ -1,7 +1,12 @@
 import Link from "next/link";
 import React from "react";
 
-const Line = ({ href, title }) => {
+interface LineProps {
+  href: string;
+  title: string;
+}
+
+const Line: React.FC<LineProps> = ({ href, title }) => {
   return (
     <div className="flex items-center gap-4 py-8">
       <div className="h-px flex-1 bg-linear-to-r from-border/0 via-border to-border/0" />

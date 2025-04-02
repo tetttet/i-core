@@ -9,8 +9,11 @@ import { getProductSlug } from "@/db/lib/getProductBySlug";
 
 export default function ProductPage() {
   const { slug } = useParams();
+  const product = typeof slug === "string" ? getProductSlug(slug) : null;
 
-  const product = getProductSlug(slug);
+  // Инициализируем состояния сразу, даже если product = null
+  const [selectedPrice, setSelectedPrice] = useState(product?.price || 0);
+  const [selectedImage, setSelectedImage] = useState(product?.image?.[0] || "");
 
   useEffect(() => {
     if (product) {
@@ -23,13 +26,13 @@ export default function ProductPage() {
   }
 
   const productMenu = product.menu || [];
-  const [selectedPrice, setSelectedPrice] = useState(product.price);
-  const [selectedImage, setSelectedImage] = useState(product.image[0]);
 
   const addToCart = () => {
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartData = localStorage.getItem("cart");
+    const cart = cartData ? JSON.parse(cartData) : [];
+
     const existingProduct = cart.find(
-      (item) =>
+      (item: { slug: string; selectedPrice: number }) =>
         item.slug === product.slug && item.selectedPrice === selectedPrice
     );
 
@@ -47,14 +50,20 @@ export default function ProductPage() {
 
     // Показать кастомное уведомление с анимацией появления
     const alertBox = document.getElementById("custom-alert");
-    alertBox.classList.remove("hidden", "opacity-0", "scale-95");
-    alertBox.classList.add("opacity-100", "scale-100", "transition-transform");
+    if (alertBox) {
+      alertBox.classList.remove("hidden", "opacity-0", "scale-95");
+      alertBox.classList.add(
+        "opacity-100",
+        "scale-100",
+        "transition-transform"
+      );
 
-    // Скрыть уведомление через 3 секунды
-    setTimeout(() => {
-      alertBox.classList.remove("opacity-100", "scale-100");
-      alertBox.classList.add("opacity-0", "scale-95");
-    }, 3000);
+      // Скрыть уведомление через 3 секунды
+      setTimeout(() => {
+        alertBox.classList.remove("opacity-100", "scale-100");
+        alertBox.classList.add("opacity-0", "scale-95");
+      }, 3000);
+    }
   };
 
   return (

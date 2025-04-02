@@ -18,6 +18,12 @@ import {
 import { Menu, CircleX, Trash } from "lucide-react";
 
 const Navbar = () => {
+  type CartItem = {
+    quantity: number;
+    title: string;
+    selectedPrice: number; // Ensure this property exists for the price calculation
+  };
+
   const [activeItem, setActiveItem] = useState<
     | "Store"
     | "Mac"
@@ -32,42 +38,47 @@ const Navbar = () => {
   >(null);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [cartOpen, setCartOpen] = useState(false);
-  const [cartCount, setCartCount] = useState(0);
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState<CartItem[]>([]); // Указываем тип CartItem[] для начального состояния
+  const [cartCount, setCartCount] = useState<number>(0);
 
   const logo = "/logo-removebg.png";
   const search = "/images/search.svg";
   const bag = "/images/bag.svg";
 
-  const navLists = [
-    { name: "Store", link: "/shop" },
-    { name: "Mac", link: "/shop?category=mac" },
-    { name: "iPhone", link: "/shop?category=iphone" },
-    { name: "Watch", link: "/shop?category=apple-watch" },
-    { name: "iPad", link: "/shop?category=ipad" },
-    { name: "AirPods", link: "/shop?category=airpods" },
-    { name: "Galaxy", link: "/shop?category=galaxy" },
-    { name: "Xiomi", link: "/shop?category=xiomi" },
-    { name: "Support", link: "/shop?category=support" },
+  const navLists: { name: "Store" | "Mac" | "iPhone" | "Watch" | "iPad" | "AirPods" | "Galaxy" | "Xiomi" | "Support"; link: string }[] = [
+      { name: "Store", link: "/shop" },
+      { name: "Mac", link: "/shop?category=mac" },
+      { name: "iPhone", link: "/shop?category=iphone" },
+      { name: "Watch", link: "/shop?category=apple-watch" },
+      { name: "iPad", link: "/shop?category=ipad" },
+      { name: "AirPods", link: "/shop?category=airpods" },
+      { name: "Galaxy", link: "/shop?category=galaxy" },
+      { name: "Xiomi", link: "/shop?category=xiomi" },
+      { name: "Support", link: "/shop?category=support" },
   ];
 
   useEffect(() => {
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+    const cartData = localStorage.getItem("cart");
+    const cart: CartItem[] = cartData ? JSON.parse(cartData) : [];
+    const totalItems = cart.reduce(
+      (total: number, item: CartItem) => total + item.quantity,
+      0
+    );
     setCartCount(totalItems);
   }, []);
 
   useEffect(() => {
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartData = localStorage.getItem("cart");
+    const cart: CartItem[] = cartData ? JSON.parse(cartData) : [];
     setCartItems(cart);
   }, []);
 
-  const removeItem = (index) => {
+  const removeItem = (index: number) => {
     const updatedCart = cartItems.filter((_, i) => i !== index);
     setCartItems(updatedCart);
     localStorage.setItem("cart", JSON.stringify(updatedCart));
   };
-
+  
   return (
     <div className="sticky top-0 z-50">
       <header

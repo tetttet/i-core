@@ -3,7 +3,13 @@ import { ProductCard } from "../ui/Product";
 import { getProductsByCat } from "@/db/lib/getProductsByCat";
 import Line from "../ui/Line";
 
-const RelatedProducts = ({ cat, slug, length }) => {
+interface RelatedProductsProps {
+  cat: string;
+  slug: string;
+  length: number;
+}
+
+const RelatedProducts = ({ cat, slug, length }: RelatedProductsProps) => {
   const related = getProductsByCat(cat, slug, length);
 
   if (!related || related.length === 0) {

@@ -1,6 +1,6 @@
 import { getProducts } from "./getProducts";
 
-export function getProductByCat(cat) {
+export function getProductByCat(cat: string) {
   const products = getProducts();
 
   return products.find(

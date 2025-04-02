@@ -82,8 +82,8 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto flex flex-col gap-6">
         <p className="text-gray-600 text-sm text-center md:text-left">
           Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s.
+          industry. Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry.
         </p>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">

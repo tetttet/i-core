@@ -1,6 +1,6 @@
 import { getProducts } from "./getProducts";
 
-export function getProductsByCat(cat, slug, length = 0) {
+export function getProductsByCat(cat: string, slug: string, length: number = 0) {
   const products = getProducts();
 
   const filteredProducts = products.filter(

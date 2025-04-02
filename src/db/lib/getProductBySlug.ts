@@ -1,6 +1,6 @@
 import { getProducts } from "./getProducts";
 
-export function getProductSlug(slug) {
+export function getProductSlug(slug: string) {
   const products = getProducts();
 
   return products.find(

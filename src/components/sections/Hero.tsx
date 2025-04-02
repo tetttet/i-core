@@ -1,7 +1,5 @@
 "use client";
 
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
 import { useEffect, useState } from "react";
 
 const Hero = () => {
